@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outgrowth.Space - Get More Leads. Close More Deals.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kalam', cursive;
+            background: linear-gradient(
+                to bottom,
+                #fafafa 0%,
+                #f8f8f8 25%,
+                #fafafa 50%,
+                #f8f8f8 75%,
+                #fafafa 100%
+            );
+            background-size: 100% 25px;
+            min-height: 100vh;
+            color: #2a2a2a;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 80px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #ff6b6b, transparent);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0 60px;
+            position: relative;
+        }
+
+        .logo {
+            margin: 0 auto 30px;
+            animation: float 3s ease-in-out infinite;
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: #333;
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        .logo .space {
+            color: #888;
+            font-weight: 400;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            transform: rotate(-1deg);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #444;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            transform: rotate(0.5deg);
+        }
+
+        .stat-box {
+            display: inline-block;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 25px 35px;
+            margin: 20px;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .stat-number {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin: 80px 0;
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2a2a2a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:nth-child(1) { transform: rotate(-1deg); }
+        .service-card:nth-child(2) { transform: rotate(1deg); }
+        .service-card:nth-child(3) { transform: rotate(-0.5deg); }
+
+        .service-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .service-title {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            background: #fff;
+            border: 2px dashed #333;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateX(20px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 25px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            margin: 80px 0;
+            transform: rotate(-0.5deg);
+        }
+
+        .cta-section h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Kalam', cursive;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            transition: background 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        .submit-btn {
+            background: #333;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: rotate(-1deg);
+        }
+
+        .submit-btn:hover {
+            transform: rotate(0deg) scale(1.05);
+            background: #222;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 2px dashed #ddd;
+            margin-top: 60px;
+        }
+
+        .handwritten-accent {
+            font-family: 'Caveat', cursive;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 30px; }
+            .step { flex-direction: column; text-align: center; gap: 20px; }
+            .container { padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                Outgrowth<span class="space">.space</span>
+            </div>
+            <div class="hero">
+                <h1>Get More Leads. Close More Deals.</h1>
+                <p>Turn scattered clicks into focused conversations that move your business forward.</p>
+                <div class="stat-box">
+                    <span class="stat-number">45%+</span>
+                    <span class="stat-text">more qualified leads<br>in your pipeline</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">What I do for you?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3 class="service-title">LinkedIn Outreach</h3>
+                    <p class="service-description">AI-powered automation with a human touch. From connection requests to tailored follow-ups, we help you build real relationships with decision-makers, and open the door for your solutions when it matters most.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">✉️</div>
+                    <h3 class="service-title">Email Outreach</h3>
+                    <p class="service-description">Stop sending noise. With AI-driven data cleaning and hyper-personalized variables, every sequence feels handcrafted, at scale. The result? Replies that lead to relationships, not unsubscribes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Lead Research & Qualification</h3>
+                    <p class="service-description">I don't just find leads - I find the RIGHT leads. Pre-qualified prospects who actually need what you're selling and have the budget to buy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">How we'll work together?</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Identify Your Ideal Customers</h3>
+                        <p>We pinpoint who your best prospects are, their roles, industries, and pain points, so every outreach hits the right audience.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Build a Targeted Prospect List</h3>
+                        <p>We research and gather leads that match your ICP, creating a precise, high-quality list of opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Clean & Enrich Your Data</h3>
+                        <p>Using OpenAI and the Perplexity API, we validate, clean, and enhance your list to ensure accuracy and actionable insights.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Craft Personalized Messages</h3>
+                        <p>We design dynamic, AI-assisted messaging that speaks directly to each prospect, making every outreach feel human and relevant.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Launch & Optimize Campaigns</h3>
+                        <p>We run email and LinkedIn campaigns with smart automation, monitor results, and continuously refine messaging for maximum engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to fill your pipeline?</h2>
+            <p>Let's chat about how I can help you get more of the right conversations with the right people. No pressure, just an honest conversation about your goals.</p>
+            
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="What's your name?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="Company name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Tell me about your business and what kind of leads you're looking for..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Let's Talk Business ↗</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2025 <span class="handwritten-accent">Outgrowth.Space</span> - Where leads become relationships</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate service cards on scroll
+            const cards = document.querySelectorAll('.service-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                });
+            });
+            
+            cards.forEach(card => observer.observe(card));
+            
+            // Form submission handler
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const btn = document.querySelector('.submit-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Sending...';
+                btn.style.transform = 'rotate(0deg) scale(0.95)';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Message Sent! ✓';
+                    btn.style.background = '#4CAF50';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '#333';
+                        btn.style.transform = 'rotate(-1deg)';
+                        form.reset();
+                    }, 2000);
+                }, 1000);
+            });
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px) rotate(-1deg);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) rotate(-1deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
